@@ -1,0 +1,19 @@
+{
+  "name": "coin-flip",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:cpp": "node scripts/build-cpp.mjs",
+    "dev": "npm run build:cpp && concurrently \"npm:dev:backend\" \"npm:dev:web\"",
+    "dev:backend": ".\\bin\\flip.exe",
+    "dev:web": "vite",
+    "build": "npm run build:cpp && tsc -p tsconfig.json && vite build",
+    "start": ".\\bin\\flip.exe"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  }
+}
